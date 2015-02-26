@@ -1,3 +1,9 @@
 [submodule "vendor/twbs/bootstrap"]
 	path = vendor/twbs/bootstrap
 	url = https://github.com/twbs/bootstrap.git
+[submodule "asset/js/vendor/backbone"]
+	path = asset/js/vendor/backbone
+	url = https://github.com/jashkenas/backbone.git
+[submodule "asset/js/vendor/jquery"]
+	path = asset/js/vendor/jquery
+	url = https://github.com/jquery/jquery.git
