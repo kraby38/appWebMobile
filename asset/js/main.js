@@ -1,8 +1,8 @@
 require.config({
-	path: {
-		jquery: 'vendor/jquery/jquery', // -> vendor/jquery/jquery.js
-		underscore : 'vendor/Underscore/underscore', //->vendor/Underscore/underscore.js
-		backbone : 'vendor/backbone/backbone', // -> vendor/backnone/backbone.js		
+	paths: {
+		'jquery': 'vendor/jquery/jquery', // -> vendor/jquery/jquery.js
+		'underscore' : 'vendor/underscore/underscore', //->vendor/underscore/underscore.js
+		'backbone' : 'vendor/backbone/backbone', // -> vendor/backnone/backbone.js		
 	},
 	shim: {
 		'backbone' : {
@@ -11,6 +11,9 @@ require.config({
 		},
 		'underscore' : {
 			export: '_'
+		},
+		'jquery' : {
+			export: '$'
 		}
 
 	}

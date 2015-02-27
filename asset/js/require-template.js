@@ -2,8 +2,9 @@ define(
 	[
 	// definition des dépendances
 	'jquery', // lib jquery
-
-	], function($) {
+	'underscore',
+	'backbone'
+	], function($,_,Backbone) {
 		/* on passe jQuery en parametre de la fonction 
 		** ce qui permet de l'utiliser par la suite
 		** exemple : *('.exemple').hide()
