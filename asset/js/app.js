@@ -1,6 +1,11 @@
-require(
+define(
 	[
 	'jquery'
 	], function($) {		
-		$('h1').html('test h1');
+		var initialize = function(){
+			$('h1').html('Menu de l \'api').hide().show(1000);
+		};
+		return {
+			initialize: initialize
+		}
 	});
