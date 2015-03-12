@@ -5,6 +5,7 @@ define(
 	'underscore',
 	'backbone',
 	'view/checkin/list'//view/checkin/list.js
+	'config'
 	
 	], function($,_,Backbone,CheckinListView) {
 		
