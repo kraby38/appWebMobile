@@ -3,21 +3,32 @@ define(
 	'jquery',
 	'underscore',
 	'backbone',
-	'collection/checkins'
+	'collection/checkins',
+	'text!../../../template/checkin/list.html'
 
-	], function($,_,Backbone,checkinCollection) {
+	], function($,_,Backbone,CheckInCollection,CheckInListTemplate) {
 
-		var checkinlistview = Backbone.View.extend({
+		var CheckInListView  = Backbone.View.extend({
+			el: '#chekin',
+			template : '<h3>test template</h3>',
+			list : _.template(CheckInListTemplate),
+
 			render: function(){
-				console.log("checkinlistview render");
-				checkinCollection = new checkinCollection();
+				var self = this;
+				console.log("CheckInListView Render");
+				checkinCollection = new CheckInCollection();
 				checkinCollection.fetch({
 					success: function(checkins){
-						console.log(checkins);
+						console.log(checkins.models);
+						console.log(self.$el);
+						self.$el.html(self.template);
+						self.$el.html(self.list({
+							checkInList: checkins.models
+						}));
 					}
 				});
 			}
 		});
-		return checkinlistview;
+		return CheckInListView ;
 		
 	});
