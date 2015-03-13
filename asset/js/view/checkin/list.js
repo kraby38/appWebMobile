@@ -7,7 +7,7 @@ define(
 	'text!../../../template/checkin/list.html'
 
 	], function($,_,Backbone,CheckInCollection,CheckInListTemplate) {
-
+		
 		var CheckInListView  = Backbone.View.extend({
 			el: '#chekin',
 			template : '<h3>test template</h3>',
