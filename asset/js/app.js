@@ -6,7 +6,7 @@ define(
 	'router'
 	], function($,_,Backbone,router) {		
 		var initialize = function(){
-			$('h1').html('Menu de l \'api').hide().show(1000);
+			$('h1').html('Menu de l \'api');
 			router.initialize();
 		};
 		return {

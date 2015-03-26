@@ -20,25 +20,26 @@ define(
 		})
 
 		var initialize = function(){
-			var routeur = new Router;
+			var routeur = new Router();
 
 			$.ajaxPrefilter( function( options, originalOption, jqXHR){
+				console.log('ajaxPrefilter');
 				options.url = Config.apiServer+options.url;// a la place de l'url
-				alert(Config.apiServer+"   "+options.url);
+				console.log(Config.apiServer+"   "+options.url);
 				options.crossDomain = {
 					crossDomain: true
 				};
 			});
 			routeur.on("route:home", function() {
-				alert('home');
+				console.log('home');
 				CheckinListView = new CheckinListView();
 				CheckinListView.render();  				
 			});
 			routeur.on("route:hello", function(name) {
-  				alert('hello'+ name);
+  				console.log('hello'+ name);
 			});
 			routeur.on("route:checkin", function(id) {
-  				alert('checkin  '+ id);
+  				console.log('checkin  '+ id);
   				checkinselected = new CheckInSelected(id);
 				checkinselected.render({id:id}); 
 			});

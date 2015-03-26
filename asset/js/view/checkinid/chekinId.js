@@ -5,23 +5,25 @@ define(
 	'underscore',
 	'backbone',
 	'models/checkin',
+	'text!../../../template/checkin/idcheckin.html'
 	], function($,_,Backbone,CheckInModels) {
 		
 		var CheckInSelected = Backbone.Collection.extend({
 			el: "#checkinlist",
 
 			render: function(options){
-				alert('CheckInDetailsView Render test' + options.id);
+				console.log('CheckInDetailsView Render test' + options.id);
 				var that = this;
-				 if(options.id){
-					 that.checkIn = new CheckInModel({id: options.id});
-					 that.checkIn.fetch({
-						 success: function(checkin){
-						 	console.log(checkin);
-						 }
-					 });
-				 }
-		}
+				if(options.id){
+					that.checkIn = new CheckInModels({id: options.id});
+					that.checkIn.fetch({
+						success: function(checkin){
+							console.log(checkin);
+							//appele template
+						}
+					});
+				}
+			}
 		})
 
 
