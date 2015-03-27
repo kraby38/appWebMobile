@@ -6,10 +6,11 @@ define(
 	'backbone',
 	'models/checkin',
 	'text!../../../template/checkin/idcheckin.html'
-	], function($,_,Backbone,CheckInModels) {
+	], function($,_,Backbone,CheckInModels,checkinview) {
 		
 		var CheckInSelected = Backbone.Collection.extend({
 			el: "#checkinlist",
+			//template : _.(checkinview)
 
 			render: function(options){
 				console.log('CheckInDetailsView Render test' + options.id);

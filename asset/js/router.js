@@ -5,17 +5,20 @@ define(
 	'underscore',
 	'backbone',
 	'view/checkin/list',//view/checkin/list.js
-	'view/checkinid/chekinId',
+	'view/checkinid/chekinId',//CheckInSelected
+	'view/checkinadd/chekinAdd',
 	'config'
 	
-	], function($,_,Backbone,CheckinListView,CheckInSelected,Config) {
+	], function($,_,Backbone,CheckinListView,CheckInSelected,CheckInadd,Config) {
 		
 		var Router = Backbone.Router.extend({
 			routes: {
 			    "":              "home",    // #help
 			    "hello":         "hello",  // #search/kiwis
 			    "hello/:name": 	 "hello",
+			    "checkin/add" :  "checkinadd",
 			    "checkin/:id" :  "checkin",
+			    
 			  }
 		})
 
@@ -38,11 +41,17 @@ define(
 			routeur.on("route:hello", function(name) {
   				console.log('hello'+ name);
 			});
+			routeur.on("route:checkinadd", function() {
+  				console.log('checkin detail route ');
+  				checkinadd = new CheckInadd();
+				checkinadd.render(); 
+			});
 			routeur.on("route:checkin", function(id) {
   				console.log('checkin  '+ id);
   				checkinselected = new CheckInSelected(id);
 				checkinselected.render({id:id}); 
 			});
+			
 			Backbone.history.start();
 
 		};
