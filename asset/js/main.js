@@ -5,7 +5,7 @@ require.config({
 		'backbone' : 'vendor/backbone/backbone', // -> vendor/backnone/backbone.js		
 		'text' : 'vendor/RequireJs/text', // -> vendor/RequireJs/text.js	
 		'async':'vendor/requirejs-plugins/src/async',
-		"gmaps": "gmaps"
+		'gmaps': 'gmaps'
 	},
 	shim: {
 		'backbone' : {

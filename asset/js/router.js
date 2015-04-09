@@ -42,7 +42,7 @@ define(
   				console.log('hello'+ name);
 			});
 			routeur.on("route:checkinadd", function() {
-  				console.log('checkin detail route ');
+  				console.log('checkin detail route add ');
   				checkinadd = new CheckInadd();
 				checkinadd.render(); 
 			});
@@ -50,10 +50,8 @@ define(
   				console.log('checkin  '+ id);
   				checkinselected = new CheckInSelected(id);
 				checkinselected.render({id:id}); 
-			});
-			
+			});			
 			Backbone.history.start();
-
 		};
 		return {
 			initialize: initialize
