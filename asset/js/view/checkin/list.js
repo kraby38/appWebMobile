@@ -5,6 +5,7 @@ define(
 	'backbone',
 	'collection/checkins',
 	'text!../../../template/checkin/list.html'
+	
 
 	], function($,_,Backbone,CheckInCollection,CheckInListTemplate) {
 		
